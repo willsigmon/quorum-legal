@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
+  <title>Quorum Support</title>
+  <link rel="stylesheet" href="../style.css" />
+  <meta name="description" content="Support and frequently asked questions for Quorum for iOS.">
+</head>
+<body>
+<div class="wrap">
+<h1>Quorum Support</h1>
+
+<p>Quorum is a civic records reader for iOS. It follows the councils, commissions,
+boards, and committees that decide what happens where you live and work, and tells
+you when the topics you care about come up.</p>
+
+<h2>Contact</h2>
+<p>Questions, bug reports, or anything unclear?
+<strong><a href="mailto:wjsigmon@me.com">wjsigmon@me.com</a></strong></p>
+
+<hr />
+
+<h2>Frequently asked questions</h2>
+
+<h3>Do I need an account or sign-in?</h3>
+<p>No. Quorum has no accounts and no sign-in. The app opens straight to the
+   civic lane you pick during onboarding.</p>
+
+<h3>What data am I looking at?</h3>
+<p>This first release runs in <strong>demo mode</strong>. It ships with a small set of
+   bundled sample jurisdictions so every screen — onboarding, the feed, an agenda
+   tree, a timestamped transcript, saved topics, and search — can be explored
+   without credentials. In demo mode the app makes no network request at all.</p>
+
+<h3>How do I connect live data?</h3>
+<p>Live data is optional and requires a Hamlet API key. Open
+   <strong>Settings</strong> in the app, enter the key, and Quorum will use it to
+   fetch from the Hamlet API. The key is stored only in the iOS Keychain and is
+   sent only to the API it belongs to. You can remove it in Settings at any time
+   to return to demo mode. Quorum does not provide a key.</p>
+
+<h3>How do alerts work?</h3>
+<p>Alerts are <strong>local notifications</strong> — there is no push server, no
+   APNs, and no device registration. After onboarding, Quorum asks once for
+   notification permission and then notifies you when a saved topic matches a
+   followed body. You can also run a check on demand from Settings.</p>
+
+<h3>How do I turn alerts off?</h3>
+<p>In the app, open <strong>Settings</strong> and turn off <em>Allow alerts</em>.
+   You can also turn notifications off for Quorum in the iOS
+   <strong>Settings</strong> app under <strong>Notifications</strong>. Either way,
+   the rest of the app keeps working.</p>
+
+<h3>Where are my follows, topics, and saved data stored?</h3>
+<p>On your device. Your civic lane, the jurisdictions and bodies you follow, your
+   saved topics, and any records synced for offline use stay in the app's own
+   container. Deleting the app deletes them. Nothing is sent to the developer.</p>
+
+<h3>What does Quorum collect?</h3>
+<p>Nothing. There are no analytics, no advertising, no tracking, and no
+   third-party SDKs. See the
+   <a href="../">privacy policy</a> for the full detail.</p>
+
+<h3>Which devices are supported?</h3>
+<p>Quorum is an iPhone app and requires iOS 26.0 or later.</p>
+
+<hr />
+
+<footer>
+  <p>Quorum for iOS · <code>com.wsig.Quorum</code> ·
+     <a href="mailto:wjsigmon@me.com">wjsigmon@me.com</a> ·
+     <a href="../">Privacy policy</a></p>
+</footer>
+</div>
+</body>
+</html>
