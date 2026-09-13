@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Quorum Privacy Policy</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Privacy policy for Quorum for iOS — no accounts, no analytics, no tracking.">
+</head>
+<body>
+<div class="wrap">
+<header id="title-block-header">
+<h1 class="title">Quorum Privacy Policy</h1>
+</header>
+<h1 id="quorum-privacy-policy">Quorum Privacy Policy</h1>
+<p><strong>Effective date:</strong> September 13, 2026</p>
+<p><strong>Applies to:</strong> Quorum for iOS, version 0.1.0, bundle
+<code>com.wsig.Quorum</code></p>
+<hr />
+<h2 id="in-plain-language">In plain language</h2>
+<p>Quorum is a civic records reader. It does not have accounts,
+analytics, ads, or tracking. The civic lane you pick, the jurisdictions
+and bodies you follow, the topics you save, and the civic records it
+downloads stay on your device. If you choose to connect live data by
+entering a Hamlet API key, the key is stored in the iOS Keychain and is
+sent only to the API it belongs to; the developer of Quorum receives
+nothing. Alerts are local notifications — there is no push server and no
+device registration.</p>
+<p><strong>The short version:</strong></p>
+<ul>
+<li>No account, no sign-in.</li>
+<li>No analytics, no advertising, no tracking.</li>
+<li>No third-party SDKs.</li>
+<li>Follows, topics, the chosen civic lane, and synced records are
+stored on your device.</li>
+<li>The optional API key lives in the Keychain, never in
+<code>UserDefaults</code> or source.</li>
+<li>Alerts are local notifications only. There is no server and no
+APNs.</li>
+<li>The default build runs on bundled sample data and makes no network
+request at all.</li>
+</ul>
+<hr />
+<h2 id="what-quorum-does">What Quorum does</h2>
+<p>Quorum lets you follow local government bodies (a city council, a
+county commission, a planning board), read their meetings and agendas,
+read a timestamped transcript, save topics, and be told when one of
+those topics comes up. No account or sign-in is required.</p>
+<p>This first release ships with a small set of <strong>bundled sample
+jurisdictions</strong> so every screen can be explored without
+credentials (“demo mode”). Live data is optional and requires a Hamlet
+API key.</p>
+<hr />
+<h2 id="information-we-do-not-collect">Information we do NOT
+collect</h2>
+<p>Quorum does not collect, store on any server, or transmit to the
+developer:</p>
+<ul>
+<li>Personal information (name, email, phone number, address)</li>
+<li>Account credentials (there are no accounts)</li>
+<li>Analytics or usage data</li>
+<li>Advertising identifiers (IDFA / advertising IDs)</li>
+<li>Location data</li>
+<li>Contacts, photos, camera, or microphone data</li>
+<li>Health, motion, or fitness data</li>
+<li>Your follows, saved topics, or search queries</li>
+<li>Crash reports containing personal information</li>
+</ul>
+<p>There is no developer-operated server that receives user data. The
+app contains no analytics SDK and no advertising SDK.</p>
+<hr />
+<h2 id="data-stored-on-your-device">Data stored on your device</h2>
+<p>All of the following lives in the app’s own container on your device.
+Deleting the app deletes it.</p>
+<ul>
+<li><strong>Your civic lane</strong> (the role you chose during
+onboarding) — stored in <code>UserDefaults</code>.</li>
+<li><strong>Followed jurisdictions and government bodies</strong> —
+stored in <code>UserDefaults</code>.</li>
+<li><strong>Saved topics</strong> — stored in <code>UserDefaults</code>,
+JSON-encoded.</li>
+<li><strong>Sync watermarks</strong> (the timestamp used to fetch only
+new records) — stored in <code>UserDefaults</code>.</li>
+<li><strong>Alert bookkeeping</strong> (which alerts were already shown,
+so they are not repeated) — stored in <code>UserDefaults</code>.</li>
+<li><strong>Civic records synced for offline use</strong> (locations,
+bodies, meetings, agendas) — stored in a local SwiftData database.</li>
+</ul>
+<p>None of this is sent to the developer.</p>
+<hr />
+<h2 id="the-optional-hamlet-api-key">The optional Hamlet API key</h2>
+<p>Quorum works fully in demo mode with no key. If you enter a Hamlet
+API key in Settings:</p>
+<ul>
+<li>The key is stored <strong>only in the iOS Keychain</strong>, as a
+generic password under the service <code>com.wsig.Quorum.hamlet</code>,
+account <code>hamlet-api-key</code>, with
+<code>kSecAttrAccessibleAfterFirstUnlock</code> so a background alert
+check can read it after the device has been unlocked once since
+boot.</li>
+<li>The key is sent as a bearer credential <strong>only to
+<code>https://api.myhamlet.com</code></strong> — the API the key belongs
+to. It is never sent to the developer of Quorum.</li>
+<li>You can remove it at any time in Settings, which returns the app to
+demo mode.</li>
+</ul>
+<hr />
+<h2 id="network-requests">Network requests</h2>
+<p>In the <strong>default demo mode — no stored key — Quorum makes no
+network request at all.</strong> The app selects its bundled fixture
+data source when no key is present.</p>
+<p>If you configure a Hamlet API key, the app talks to
+<code>https://api.myhamlet.com</code> only:</p>
+<ul>
+<li>It lists locations, government bodies, meetings, and agendas, and
+downloads a timestamped transcript file from a time-limited (presigned)
+URL the API returns.</li>
+<li>Requests carry the API key as a bearer token and the identifiers of
+the records being requested.</li>
+<li>Standard HTTP information (such as your IP address, sent by iOS for
+any network request) reaches that third-party API. The developer of
+Quorum receives none of it. Hamlet’s own privacy policy applies to the
+data Hamlet processes.</li>
+</ul>
+<hr />
+<h2 id="notifications">Notifications</h2>
+<p>Alerts are delivered as <strong>local notifications</strong> using
+the iOS notification system. There is no push notification server, no
+APNs registration, and no device token. Quorum never asks for
+notification permission at launch; it asks once, in context, after you
+finish onboarding.</p>
+<p>You can turn notifications off at any time in iOS Settings or in the
+app.</p>
+<hr />
+<h2 id="background-refresh">Background refresh</h2>
+<p>The app declares the iOS <code>fetch</code> background mode and
+registers a single background task
+(<code>com.wsig.Quorum.refresh-alerts</code>) that runs a short, bounded
+local check for new matches among the bodies you follow. It performs no
+server work beyond the Hamlet API calls described above (and none at all
+in demo mode).</p>
+<hr />
+<h2 id="logging">Logging</h2>
+<p>Quorum writes diagnostic messages to the <strong>local</strong> Apple
+unified log (OSLog) — for example, that a sync failed. These logs stay
+on the device and are not transmitted to the developer.</p>
+<hr />
+<h2 id="third-party-sdks">Third-party SDKs</h2>
+<p>Quorum bundles <strong>no third-party SDKs</strong>. It is built only
+with Apple frameworks: SwiftUI, Foundation, SwiftData, UIKit, OSLog,
+Observation, Security, UserNotifications, BackgroundTasks, and
+CoreGraphics. There are no analytics, advertising, attribution,
+crash-reporting, or social SDKs to disclose.</p>
+<hr />
+<h2 id="data-sharing">Data sharing</h2>
+<p>Quorum does not sell, rent, or share your data. There is no developer
+server to share it with. The only outbound connection, when you opt into
+live data, is to the Hamlet API belonging to the key you configured.</p>
+<hr />
+<h2 id="testflight-and-the-app-store-apple">TestFlight and the App Store
+(Apple)</h2>
+<p>If you install Quorum through TestFlight, Apple collects crash logs,
+device and OS version, and any feedback you choose to submit. The
+developer may receive TestFlight crash logs and feedback text (which can
+include device metadata such as model and iOS version) solely to fix
+bugs. Apple’s own privacy policy applies.</p>
+<hr />
+<h2 id="childrens-privacy">Children’s privacy</h2>
+<p>Quorum is a public-records reading tool with no social features, no
+messaging, and no user-generated content. It does not knowingly collect
+personal information from anyone, including children. Quorum is not
+directed at children.</p>
+<hr />
+<h2 id="data-retention-and-deletion">Data retention and deletion</h2>
+<ul>
+<li><strong>On your device:</strong> data persists until you delete it
+in the app or delete the app.</li>
+<li><strong>Developer servers:</strong> none. There is no server-side
+copy to retain or delete.</li>
+<li>To remove the optional API key specifically, clear it in
+Settings.</li>
+</ul>
+<hr />
+<h2 id="data-security">Data security</h2>
+<ul>
+<li>Device data is protected by the iOS app sandbox and iOS file
+encryption.</li>
+<li>The optional API key is stored in the Keychain, never in plain
+<code>UserDefaults</code>, a plist, or source control.</li>
+<li>Network traffic to the Hamlet API, when enabled, uses HTTPS
+(TLS).</li>
+</ul>
+<hr />
+<h2 id="changes-to-this-policy">Changes to this policy</h2>
+<p>If Quorum’s data practices change, this document will be updated and
+the date at the top revised. The App Store privacy answers and this
+policy are kept in sync.</p>
+<hr />
+<h2 id="app-store-privacy-summary">App Store privacy summary</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Does this app collect data?</td>
+<td><strong>No — “Data Not Collected.”</strong></td>
+</tr>
+<tr>
+<td>Is data used for tracking?</td>
+<td><strong>No.</strong></td>
+</tr>
+<tr>
+<td>Third-party SDKs requiring disclosure</td>
+<td><strong>None.</strong></td>
+</tr>
+<tr>
+<td>Required-reason APIs</td>
+<td><strong>UserDefaults.</strong></td>
+</tr>
+<tr>
+<td>Data linked to the user</td>
+<td><strong>None.</strong></td>
+</tr>
+<tr>
+<td>Data used for advertising</td>
+<td><strong>None.</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contact">Contact</h2>
+<p>Questions about this policy: <strong>wjsigmon@me.com</strong></p>
+<hr />
+<p><em>This policy describes app behavior and makes no legal
+representation.</em></p>
+</div>
+</body>
+</html>

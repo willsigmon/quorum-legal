@@ -1,0 +1,51 @@
+:root {
+  --paper: #F7F4EF;
+  --paper-raised: #FEFDFB;
+  --ink: #271E18;
+  --ink-secondary: #5E554E;
+  --rule: #D1CBC2;
+  --accent: #892E29;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 -apple-system, "New York", "Iowan Old Style", Georgia, serif;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+h1 {
+  font-family: "Avenir Next", -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 34px; line-height: 1.15; letter-spacing: -0.01em;
+  margin: 0 0 8px; padding-bottom: 16px; border-bottom: 2px solid var(--accent);
+}
+h2 {
+  font-family: "Avenir Next", -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--accent); margin: 40px 0 10px;
+}
+h3 { font-family: "Avenir Next", sans-serif; font-size: 17px; margin: 28px 0 8px; }
+p, li { color: var(--ink); }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 32px 0; }
+strong { font-weight: 600; }
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px;
+  background: #ECE7DF; padding: 1px 5px; border-radius: 4px;
+}
+table {
+  width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px;
+  font-family: "Avenir Next", -apple-system, sans-serif;
+  background: var(--paper-raised); border: 1px solid var(--rule);
+}
+th, td { text-align: left; padding: 9px 12px; border-top: 1px solid var(--rule); }
+th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-secondary); border-top: 0; }
+blockquote { margin: 20px 0; padding: 12px 16px; background: var(--paper-raised); border-left: 3px solid var(--accent); color: var(--ink-secondary); }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--ink-secondary); font-size: 14px; }
+a { color: var(--accent); }
+@media (prefers-color-scheme: dark) {
+  :root { --paper:#1B1613; --paper-raised:#27221D; --ink:#EDE9E1; --ink-secondary:#B6B0A7; --rule:#3E3833; --accent:#DF6A59; }
+  code { background:#120D0A; }
+}
