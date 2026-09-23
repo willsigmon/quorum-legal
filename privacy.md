@@ -119,7 +119,8 @@ There is no push notification server, no APNs registration, and no device token.
 Quorum never asks for notification permission at launch; it asks once, in context,
 after you finish onboarding.
 
-You can turn notifications off at any time in iOS Settings or in the app.
+You can turn notifications off at any time in iOS Settings → Notifications. Quorum's
+Settings screen shows the current permission and links there.
 
 ---
 
